@@ -9,18 +9,29 @@ interface PokemonCard {
 const Card: React.FC<PokemonCard> = (props) => {
   const { data } = props;
   const typeColor = (type: string): string => {
-    switch (type) {
-      case "grass":
-        return "bg-cardGreen";
-      case "fire":
-        return "bg-cardOrange";
-      case "water":
-        return "bg-[#74beff]";
-      case "electric":
-        return "bg-cardYellow";
-      default:
-        return "bg-slate-400";
+    if (type == "grass") {
+      return "bg-cardGreen";
+    } else if (type == "water") {
+      return "bg-[#74beff]";
+    } else if (type == "fire") {
+      return "bg-cardOrange";
+    } else if (type == "electric") {
+      return "bg-cardYellow";
+    } else {
+      return "bg-slate-400";
     }
+    // switch (type) {
+    //   case "grass":
+    //     return "bg-cardGreen";
+    //   case "fire":
+    //     return "bg-cardOrange";
+    //   case "water":
+    //     return "bg-cardBlue";
+    //   case "electric":
+    //     return "bg-cardYellow";
+    //   default:
+    //     return "bg-slate-400";
+    // }
   };
 
   const idStructure = (order: number) => {
